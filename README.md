@@ -2,7 +2,7 @@
 
 # :rotating_light::rotating_light::rotating_light: NEEDS UPDATING :rotating_light::rotating_light::rotating_light:
 
-![Python 3.8](https://img.shields.io/badge/Python-3.8-blue) [![GPU Docker Image](https://img.shields.io/badge/Docker%20image-gpu--latest-green)](https://hub.docker.com/r/drivendata/sfp-competition/tags?page=1&name=gpu-latest) [![CPU Docker Image](https://img.shields.io/badge/Docker%20image-cpu--latest-lightgrey)](https://hub.docker.com/r/drivendata/sfp-competition/tags?page=1&name=cpu-latest) 
+![Python 3.8](https://img.shields.io/badge/Python-3.8-blue) [![Docker Image](https://img.shields.io/badge/Docker%20image-latest-green)](https://hub.docker.com/r/drivendata/noaa-competition/tags?page=1&name=latest)
 
 Welcome to the runtime repository for the [NIST De-ID2 Challenge](https://www.drivendata.org/competitions/68/competition-differential-privacy-maps-1). This repository contains the definition of the environment where your code submissions will run. It specifies both the operating system and the software packages that will be available to your solution.
 
