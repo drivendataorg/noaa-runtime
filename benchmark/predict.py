@@ -23,14 +23,15 @@ def predict_dst(
     Returns
     -------
     predictions : Tuple[float, float]
-        A tuple of two predictions, for (t and t + 1 hour) respectively
+        A tuple of two predictions, for (t and t + 1 hour) respectively; these should
+        be between -2,000 and 500.
     """
 
     ########################################################################
     #                         YOUR CODE HERE!                              #
     ########################################################################
 
-    # baseline: just guess the training data mean ¯\_(ツ)_/¯
+    # this is a naive baseline where we just guess the training data mean every time
     prediction_at_t0 = -12
     prediction_at_t1 = -12
 
