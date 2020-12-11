@@ -35,7 +35,7 @@ _submission_write_perms:
 # Commands for building the container if you are changing the requirements
 # ================================================================================================
 
-## Builds the container locally, tagging it with cpu-local or gpu-local
+## Builds the container locally
 build:
 	docker build -t ${LOCAL_IMAGE} runtime
 
