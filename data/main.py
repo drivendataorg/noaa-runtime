@@ -7,12 +7,15 @@ from time import process_time
 from typing import Optional
 
 from loguru import logger
+import numpy as np
 import pandas as pd
 import typer
 from tqdm import tqdm
 
 
 # default paths for Docker environment
+MAX_DST = 10_000
+MIN_DST = -10_000
 ROOT_DIRECTORY = Path("/codeexecution")
 RUNTIME_DIRECTORY = ROOT_DIRECTORY / "submission"
 DATA_DIRECTORY = ROOT_DIRECTORY / "data"
@@ -96,6 +99,12 @@ def main_loop(submission_format, solar_wind_df, satellite_positions_df, sunspots
                 solar_wind_7d, satellite_positions_7d, latest_sunspot_ssn
             )
             end_time = process_time()
+
+            # make sure the predictions make sense
+            assert np.isfinite(dst0), f"ERROR: prediction for t0 {(dst0)} was null or infinite"
+            assert np.isfinite(dst1), f"ERROR: prediction for t1 {(dst1)} was null or infinite"
+            assert MIN_DST < dst0 < MAX_DST, f"ERROR: prediction for t0 {(dst0)} was not in reasonable bounds"
+            assert MIN_DST < dst1 < MAX_DST, f"ERROR: prediction for t1 {(dst1)} was not in reasonable bounds"
 
             # make sure the individual prediction call took <= 30 seconds
             prediction_time_seconds = end_time - start_time
