@@ -109,6 +109,8 @@ In order to test your code submission, you will need a code submission!
 
 **Your only job is to replace the function `predict_dst` in `predict.py`** with logic that will take seven days worth of
 data (see the docstring) and output two predictions: one for the current hour (t0) and one for the next hour.
+See the extensive description [here](https://www.drivendata.org/competitions/73/noaa-magnetic-forecasting/page/288/).
+
 Keep in mind that your submission will not have access to the internet, so everything it needs to run must be provided
 in the `submission.zip` you create. (You _are_ permitted to write intermediate files to `/codeexecution/submission`.)
 
