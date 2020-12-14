@@ -17,6 +17,6 @@ dependencies:
   - pytorch=1.6.0=py3.8_cuda10.2.89_cudnn7.6.5_0
   - scikit-learn=0.23.2=py38hee58b96_0
   - scipy=1.5.2=py38h8c5af15_0
-  - tensorflow=2.2.0=mkl_py38h6d3daf0_0
+  - tensorflow=2.3
   - typer=0.3.1=py_0
   - xgboost=1.2.0=py38h950e882_0
