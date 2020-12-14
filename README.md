@@ -49,11 +49,10 @@ Make sure you have the prerequisites installed.
 First, **download the data** from the competition [download page](https://www.drivendata.org/competitions/73/noaa-magnetic-forecasting/data/)
 and put each file in the `data/` folder.
 
-To test out the full execution pipeline, run the following commands in order in the terminal. These will get the Docker
+To test out the full execution pipeline, make sure docker is running and then run the following commands in order in the terminal. These will get the Docker
 images, zip up an example submission script, and run the submission on your locally running version of the container.
 
 ```bash
-systemctl start docker
 make pull
 make pack-benchmark
 make test-submission
@@ -94,8 +93,6 @@ To find out more about what these commands do, keep reading! :eyes:
 Your submission will run inside a Docker container, a virtual operating system that allows for a consistent software
 environment across machines. This means that if your submission successfully runs in the container on your local machine,
 you can be pretty sure it will successfully run when you make an official submission to the DrivenData site.
-
-To start Docker, run: `systemctl start docker`
 
 In Docker parlance, your computer is the "host" that runs the container. The container is isolated from your host machine,
 with the exception of the following directories:
