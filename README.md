@@ -2,7 +2,7 @@
 
 ![Python 3.8](https://img.shields.io/badge/Python-3.8-blue) [![Docker Image](https://img.shields.io/badge/Docker%20image-latest-green)](https://hub.docker.com/r/drivendata/noaa-competition/tags?page=1&name=latest)
 
-Welcome to the runtime repository for the [MagNet: Model the Geomagnetic Field](https://www.drivendata.org/competitions/73/noaa-magnetic-forecasting/).
+Welcome to the runtime repository for the [MagNet: Model the Geomagnetic Field](https://www.drivendata.org/competitions/73/noaa-magnetic-forecasting/) competition.
 This repository contains the definition of the environment where your code submissions will run. It specifies both the operating system and the
 software packages that will be available to your solution.
 
@@ -14,6 +14,8 @@ This repository has two primary uses for competitors:
    [Python](https://github.com/drivendataorg/noaa-runtime/blob/master/runtime/py.yml) environment.
    (The official runtime uses **Python 3.8.5**) You can then submit a PR to request compatible packages be included in the official container image.
 
+Refer to the [code submission page](https://www.drivendata.org/competitions/73/noaa-magnetic-forecasting/page/288/) for details on what and how to submit and the data constraints of the environment.
+
  ----
 
 ### [Getting started](#0-getting-started)
@@ -22,10 +24,10 @@ This repository has two primary uses for competitors:
 ### [Testing your submission locally](#1-testing-your-submission-locally)
  - [Implement your solution](#implement-your-solution)
  - [Example benchmark submission](#example-benchmark-submission)
- - [Making a submission](#making-a-submission)
+ - [Running your submission](#running-your-submission)
  - [Reviewing the logs](#reviewing-the-logs)
 ### [Updating the runtime packages](#2-updating-the-runtime-packages)
- - [Adding new Python packages](#adding-new-python-package)
+ - [Adding new Python packages](#adding-new-python-packages)
  - [Testing new dependencies](#testing-new-dependencies)
  - [Opening a pull request](#opening-a-pull-request)
 
@@ -56,7 +58,7 @@ data/
 └── sunspots.csv
 ```
 
-To test out the full execution pipeline, run the following commands in order in the terminal. These will get the Docker
+To test out the full execution pipeline, make sure docker is running and then run the following commands in order in the terminal. These will get the Docker
 images, zip up an example submission script, and run the submission on your locally running version of the container.
 
 ```bash
@@ -116,9 +118,9 @@ When you make a submission, the code execution platform will unzip your submissi
 
 In order to test your code submission, you will need a code submission! 
 
-**Your only job is to replace the function `predict_dst` in `predict.py`** with logic that will take seven days worth of
+**Your only job is to replace the function `predict_dst` in [`benchmark/predict.py`](https://github.com/drivendataorg/noaa-runtime/blob/0baa35c6160e200bea5d4bc32029eabf49ae4957/benchmark/predict.py#L5)** with logic that will take seven days worth of
 data (see the docstring) and output two predictions: one for the current hour (t0) and one for the next hour.
-See the extensive description [here](https://www.drivendata.org/competitions/73/noaa-magnetic-forecasting/page/288/).
+See the extensive description on the [code submission page](https://www.drivendata.org/competitions/73/noaa-magnetic-forecasting/page/288/).
 
 Keep in mind that your submission will not have access to the internet, so everything it needs to run must be provided
 in the `submission.zip` you create. (You _are_ permitted to write intermediate files to `/codeexecution/submission`.)
@@ -150,7 +152,7 @@ make test-submission
 ```
 
 This will start the container, mount the local data and submission folders as folders within the container, and follow
-the same steps that will run on the platform to unpack your submission and run your code.
+the same steps that will run on the platform to unpack your submission and run your code. It should not take more than 5 minutes to run with the provided benchmark.
 
 ### Reviewing the logs
 
