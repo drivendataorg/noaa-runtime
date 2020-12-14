@@ -45,7 +45,16 @@ Make sure you have the prerequisites installed.
 ### Quickstart
 
 First, **download the data** from the competition [download page](https://www.drivendata.org/competitions/73/noaa-magnetic-forecasting/data/)
-and put each file in the `data/` folder.
+and put each file in the `data/` folder. After you get the data, you should have
+these files:
+
+```
+data/
+├── dst_labels.csv
+├── satellite_positions.csv
+├── solar_wind.csv
+└── sunspots.csv
+```
 
 To test out the full execution pipeline, run the following commands in order in the terminal. These will get the Docker
 images, zip up an example submission script, and run the submission on your locally running version of the container.
