@@ -1,4 +1,4 @@
-.PHONY: build debug-container export-requirements pack-benchmark pull resolve-requirements test-container test-submission unpin-requirements
+.PHONY: build debug-container export-requirements pack-benchmark pull resolve-requirements test-container test-submission unpin-requirements clean
 
 
 # ================================================================================================
@@ -85,7 +85,7 @@ pull:
 	docker pull ${IMAGE}
 
 ## Creates a submission/submission.zip file from whatever is in the "benchmark" folder
-pack-benchmark:
+pack-benchmark: clean
 # Don't overwrite so no work is lost accidentally
 ifneq (,$(wildcard ./submission/submission.zip))
 	$(error You already have a submission/submission.zip file. Rename or remove that file (e.g., rm submission/submission.zip).)
@@ -114,6 +114,11 @@ endif
 		--mount type=bind,source="$(shell pwd)"/submission,target=/codeexecution/submission \
 	   	--shm-size 8g \
 		${SUBMISSION_IMAGE}
+
+## Delete temporary Python cache and bytecode files
+clean:
+	find . -type f -name "*.py[co]" -delete
+	find . -type d -name "__pycache__" -delete
 
 
 #################################################################################
