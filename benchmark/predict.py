@@ -14,9 +14,9 @@ def predict_dst(
     Parameters
     ----------
     solar_wind_7d: pd.DataFrame
-        The last 7 days of satellite data up until (t - 1) minutes [exclusive of t]
+        The last 7 days of satellite data up until (t - 1) minutes [exclusive of t], with `timedelta` as index
     satellite_positions_7d: pd.DataFrame
-        The last 7 days of satellite position data up until the present time [inclusive of t]
+        The last 7 days of satellite position data up until the present time [inclusive of t], with `timedelta` as index
     latest_sunspot_number: float
         The latest monthly sunspot number (SSN) to be available
 
