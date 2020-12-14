@@ -14,6 +14,8 @@ This repository has two primary uses for competitors:
    [Python](https://github.com/drivendataorg/noaa-runtime/blob/master/runtime/py.yml) environment.
    (The official runtime uses **Python 3.8.5**) You can then submit a PR to request compatible packages be included in the official container image.
 
+Refer to the [code submission page](https://www.drivendata.org/competitions/73/noaa-magnetic-forecasting/page/288/) for details on what and how to submit and the data constraints of the environment.
+
  ----
 
 ### [Getting started](#0-getting-started)
@@ -112,7 +114,7 @@ In order to test your code submission, you will need a code submission!
 
 **Your only job is to replace the function `predict_dst` in [`benchmark/predict.py`](https://github.com/drivendataorg/noaa-runtime/blob/0baa35c6160e200bea5d4bc32029eabf49ae4957/benchmark/predict.py#L5)** with logic that will take seven days worth of
 data (see the docstring) and output two predictions: one for the current hour (t0) and one for the next hour.
-See the extensive description [here](https://www.drivendata.org/competitions/73/noaa-magnetic-forecasting/page/288/).
+See the extensive description on the [code submission page](https://www.drivendata.org/competitions/73/noaa-magnetic-forecasting/page/288/).
 
 Keep in mind that your submission will not have access to the internet, so everything it needs to run must be provided
 in the `submission.zip` you create. (You _are_ permitted to write intermediate files to `/codeexecution/submission`.)
