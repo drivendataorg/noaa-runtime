@@ -110,7 +110,7 @@ When you make a submission, the code execution platform will unzip your submissi
 
 In order to test your code submission, you will need a code submission! 
 
-**Your only job is to replace the function `predict_dst` in `predict.py`** with logic that will take seven days worth of
+**Your only job is to replace the function `predict_dst` in [`benchmark/predict.py`](https://github.com/drivendataorg/noaa-runtime/blob/0baa35c6160e200bea5d4bc32029eabf49ae4957/benchmark/predict.py#L5)** with logic that will take seven days worth of
 data (see the docstring) and output two predictions: one for the current hour (t0) and one for the next hour.
 See the extensive description [here](https://www.drivendata.org/competitions/73/noaa-magnetic-forecasting/page/288/).
 
@@ -144,7 +144,7 @@ make test-submission
 ```
 
 This will start the container, mount the local data and submission folders as folders within the container, and follow
-the same steps that will run on the platform to unpack your submission and run your code.
+the same steps that will run on the platform to unpack your submission and run your code. It should not take more than 5 minutes to run with the provided benchmark.
 
 ### Reviewing the logs
 
