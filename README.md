@@ -2,7 +2,7 @@
 
 ![Python 3.8](https://img.shields.io/badge/Python-3.8-blue) [![Docker Image](https://img.shields.io/badge/Docker%20image-latest-green)](https://hub.docker.com/r/drivendata/noaa-competition/tags?page=1&name=latest)
 
-Welcome to the runtime repository for the [MagNet: Model the Geomagnetic Field](https://www.drivendata.org/competitions/73/noaa-magnetic-forecasting/).
+Welcome to the runtime repository for the [MagNet: Model the Geomagnetic Field](https://www.drivendata.org/competitions/73/noaa-magnetic-forecasting/) competition.
 This repository contains the definition of the environment where your code submissions will run. It specifies both the operating system and the
 software packages that will be available to your solution.
 
