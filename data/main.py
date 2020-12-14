@@ -152,20 +152,19 @@ def main(
     )
 
     # read in the dataframes we will be feeding to the prediction function
-    logger.info(f"reading in {solar_wind_path} ...")
+    logger.info(f"reading in solar wind data ...")
     solar_wind_df = _parse_timedelta_col(pd.read_csv(solar_wind_path)).set_index(
         INDEX_COLS
     )
-    logger.info(f"... read dataframe with {len(solar_wind_df):,} rows")
-    logger.info(f"reading in {satellite_positions_path} ...")
+    logger.info(f"reading in satellite positions data ...")
     satellite_positions_df = _parse_timedelta_col(
         pd.read_csv(satellite_positions_path)
     ).set_index(INDEX_COLS)
-    logger.info(f"... read dataframe with {len(satellite_positions_df):,} rows")
-    logger.info(f"reading in {sunspots_path} ...")
+    logger.info(f"reading in sunspots data ...")
     sunspots_df = _parse_timedelta_col(pd.read_csv(sunspots_path)).set_index(INDEX_COLS)
-    logger.info(f"... read dataframe with {len(sunspots_df):,} rows")
 
+    # start running the prediction function
+    logger.info("entering main loop")
     submission = main_loop(
         submission_format, solar_wind_df, satellite_positions_df, sunspots_df
     )
