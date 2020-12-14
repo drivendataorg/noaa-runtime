@@ -10,7 +10,6 @@ from loguru import logger
 import numpy as np
 import pandas as pd
 import typer
-from tqdm import tqdm
 
 
 # default paths for Docker environment
@@ -78,7 +77,7 @@ def main_loop(submission_format, solar_wind_df, satellite_positions_df, sunspots
 
         logger.info(f"making predictions for period {period}")
         sub_df = solar_wind_df.loc[period]
-        for t0 in tqdm(submission_format.loc[period].index, miniters=1_000):
+        for i, t0 in enumerate(submission_format.loc[period].index):
             # get start time for data to create a 7 day window
             t_minus_7 = t0 - seven_days
 
@@ -101,10 +100,10 @@ def main_loop(submission_format, solar_wind_df, satellite_positions_df, sunspots
             end_time = process_time()
 
             # make sure the predictions make sense
-            assert np.isfinite(dst0), f"ERROR: prediction for t0 {(dst0)} was null or infinite"
-            assert np.isfinite(dst1), f"ERROR: prediction for t1 {(dst1)} was null or infinite"
-            assert MIN_DST <= dst0 <= MAX_DST, f"ERROR: prediction for t0 {(dst0)} was not in reasonable bounds"
-            assert MIN_DST <= dst1 <= MAX_DST, f"ERROR: prediction for t1 {(dst1)} was not in reasonable bounds"
+            assert np.isfinite(dst0), f"ERROR: prediction for t0 ({dst0:0.2f}) was null or infinite"
+            assert np.isfinite(dst1), f"ERROR: prediction for t1 ({dst1:0.2f}) was null or infinite"
+            assert MIN_DST <= dst0 <= MAX_DST, f"ERROR: prediction for t0 ({dst0:0.2f}) was not in reasonable bounds"
+            assert MIN_DST <= dst1 <= MAX_DST, f"ERROR: prediction for t1 ({dst1:0.2f}) was not in reasonable bounds"
 
             # make sure the individual prediction call took <= 30 seconds
             prediction_time_seconds = end_time - start_time
@@ -114,6 +113,9 @@ def main_loop(submission_format, solar_wind_df, satellite_positions_df, sunspots
                     f"max={MAX_ALLOWED_PREDICTION_TIME_SEC}s) -- exiting!"
                 )
             submission.loc[(period, t0), :] = (dst0, dst1)
+
+            if i % 2_500 == 0:
+                logger.info(f"... finished {i} of {sub_df.shape[0]} predictions")
 
     return submission
 
@@ -137,7 +139,6 @@ def main(
     # read in the raw Dst data
     logger.info(f"reading raw Dst data from {dst_path} ...")
     dst_df = _parse_timedelta_col(pd.read_csv(dst_path))
-    logger.info(f"... read dataframe with {len(dst_df):,} rows")
 
     # calculate a ground truth dataframe
     logger.info(f"calculating submission format and ground truth ...")
