@@ -6,7 +6,7 @@ channels:
   - defaults
 dependencies:
   - fastai=2.0.13=py_0
-  - keras==2.4.3
+  - keras=2.4.3
   - lightgbm=3.0.0=py38h950e882_0
   - loguru=0.5.0=py38h32f6830_0
   - pandas=1.1.2=py38h950e882_0
