@@ -24,10 +24,10 @@ Refer to the [code submission page](https://www.drivendata.org/competitions/73/n
 ### [Testing your submission locally](#1-testing-your-submission-locally)
  - [Implement your solution](#implement-your-solution)
  - [Example benchmark submission](#example-benchmark-submission)
- - [Making a submission](#making-a-submission)
+ - [Running your submission](#running-your-submission)
  - [Reviewing the logs](#reviewing-the-logs)
 ### [Updating the runtime packages](#2-updating-the-runtime-packages)
- - [Adding new Python packages](#adding-new-python-package)
+ - [Adding new Python packages](#adding-new-python-packages)
  - [Testing new dependencies](#testing-new-dependencies)
  - [Opening a pull request](#opening-a-pull-request)
 
