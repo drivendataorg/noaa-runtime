@@ -115,7 +115,7 @@ def main_loop(submission_format, solar_wind_df, satellite_positions_df, sunspots
             submission.loc[(period, t0), :] = (dst0, dst1)
 
             if i % 2_500 == 0:
-                logger.info(f"... finished {i} of {sub_df.shape[0]} predictions")
+                logger.info(f"... finished {i} of {submission_format.loc[period].shape[0]} predictions")
 
     return submission
 
