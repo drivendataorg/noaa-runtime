@@ -18,7 +18,9 @@ packages = [
     "xgboost",
     # ADD ADDITIONAL REQUIREMENTS BELOW HERE #
     ##########################################
-    "keras"
+    "keras",
+    "cloudpickle",
+    "tsfresh"
 ]
 
 for package in packages:
