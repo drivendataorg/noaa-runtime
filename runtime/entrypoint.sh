@@ -23,7 +23,7 @@ exit_code=0
         echo "... main.py copied $(md5sum ./main.py)"
 
         echo "Running submission with Python"
-        conda run -n py python main.py
+        conda run -n py --no-capture-output python main.py
 
         echo "Exporting submission.csv result..."
 
