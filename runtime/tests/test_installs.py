@@ -18,6 +18,7 @@ packages = [
     "xgboost",
     # ADD ADDITIONAL REQUIREMENTS BELOW HERE #
     ##########################################
+    "tensorflow-addons",
     "keras",
     "cloudpickle",
     "tsfresh"
