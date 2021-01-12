@@ -20,7 +20,8 @@ packages = [
     ##########################################
     "keras",
     "cloudpickle",
-    "tsfresh"
+    "tsfresh",
+    "pytorch_lightning"
 ]
 
 for package in packages:
