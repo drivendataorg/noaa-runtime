@@ -4,6 +4,7 @@ channels:
   - fastai
   - conda-forge
   - defaults
+  - HCC
 dependencies:
   - fastai=2.1.10=py_0
   - keras=2.4.3
