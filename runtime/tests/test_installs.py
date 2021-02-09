@@ -22,7 +22,8 @@ packages = [
     "keras",
     "cloudpickle",
     "tsfresh",
-    "pytorch_lightning"
+    "pytorch_lightning",
+    "catboost"
 ]
 
 for package in packages:
