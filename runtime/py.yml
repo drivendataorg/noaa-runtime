@@ -25,4 +25,5 @@ dependencies:
   - tsfresh=0.17.0
   - pytorch-lightning=1.1.2
   - tensorflow-addons=0.11.2
+  - catboost=0.23.2
   - numpy=1.18.5
