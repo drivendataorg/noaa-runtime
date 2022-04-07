@@ -16,7 +16,7 @@ This repository has two primary uses for competitors:
 
 Refer to the [code submission page](https://www.drivendata.org/competitions/73/noaa-magnetic-forecasting/page/288/) for details on what and how to submit and the data constraints of the environment.
 
- ----
+----
 
 ### [Getting started](#0-getting-started)
  - [Prerequisites](#prerequisites)
